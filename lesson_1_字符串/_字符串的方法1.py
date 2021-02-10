@@ -4,7 +4,6 @@ find方法可以在一个字符串中查找子串，返回子串在父串中坐�
 如果没找到，返回-1
 
 '''
-
 title = "My name is donghaha"
 print(title.find('name'))
 print(title.find('tom'))
@@ -56,14 +55,3 @@ if name2.lower() in names1:
     print(True)
 else:
     print(False)
-
-'''
-五、
-replace方法:将指定字符串替换为目标字符串
-replace(oldsub，newsub，n),n是指替换字符串的个数
-
-strip() 去除字符串两边的空格
-'''
-
-
-
