@@ -52,3 +52,33 @@ while 1:    # 循环条件为1必定成立
     if j > 10: # 当i大于10时跳出循环
         break
 
+print('===============分割线==================')
+
+'''
+无限循环
+如果条件判断语句永远为 true，循环将会无限的执行下去
+'''
+# while True:
+#     num = int(input('请输入一个数：'))
+#     print('输入的数是：',num)
+
+print('===============分割线==================')
+
+'''
+循环使用 else 语句
+while … else 在循环条件为 false 时执行 else 语句块
+'''
+num = 1
+while num <5:
+    print(num,'小于5')
+    num += 1
+else:
+    print(num,'不小于5')
+
+
+'''
+简单语句组
+类似 if 语句的语法，如果你的 while 循环体中只有一条语句，你可以将该语句与while写在同一行中
+'''
+flag = 1
+# while (flag): print('Given flag is really true!')
