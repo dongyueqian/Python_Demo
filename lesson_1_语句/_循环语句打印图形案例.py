@@ -1,14 +1,13 @@
 '''
 打印实心正方形
 '''
+def zhengfangxing1(n):
+    for j in range(n):
+        print('*  ' * n,end="")
+        print()
 
-# def zhengfangxing1(n):
-#     for j in range(n):
-#         print('*' * n,end="")
-#         print()
-
-# num1 = int(input('请输入一个数字：'))
-# print('打印一个实心正方形：',zhengfangxing1(num1))
+num1 = int(input('请输入一个数字：'))
+print('打印一个实心正方形：',zhengfangxing1(num1))
 
 '''
 打印空心正方形
@@ -25,7 +24,6 @@ def zhengfangxing2(n):
 num1 = int(input('请输入一个数字：'))
 print('打印一个空心正方形：',zhengfangxing2(num1))
 
-
 '''
 打印等腰直角三角形
 '''
@@ -33,9 +31,8 @@ def triangle2(n):
     for j in range(n):
         print("*  " * j)
 
-# num2= int(input('请输入一个数字：'))
-# print('打印一个等腰直角三角形：',triangle2(num2))
-
+num2= int(input('请输入一个数字：'))
+print('打印一个等腰直角三角形：',triangle2(num2))
 
 '''
 打印等腰三角形
@@ -48,8 +45,8 @@ def triangle3(n):
             print("*", end="")
         print()
 
-# num3= int(input('请输入一个数字：'))
-# print('打印一个等腰三角形：',triangle3(num3))
+num3= int(input('请输入一个数字：'))
+print('打印一个等腰三角形：',triangle3(num3))
 
 '''
 打印菱形
@@ -70,8 +67,8 @@ def lingxing(lines):
         print(" " * (i + 2), end="")
         print("*" * (lines - 2 - 2 * i))
 
-# lines = int(input('请输入一个数字：'))
-# print('打印一菱形：',lingxing(lines))
+lines = int(input('请输入一个数字：'))
+print('打印一菱形：',lingxing(lines))
 
 '''
 打印空心菱形
@@ -105,8 +102,8 @@ def kongxinlingxing(lines):
             print(' ' * (3 - 2 * i), end='')
             print('*')
 #
-# lines = int(input('请输入一个数字：'))
-# print('打印一空心菱形：',kongxinlingxing(lines))
+lines = int(input('请输入一个数字：'))
+print('打印一空心菱形：',kongxinlingxing(lines))
 
 
 
