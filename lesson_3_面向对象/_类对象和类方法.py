@@ -55,14 +55,15 @@ print('=================================')
 class people:
     name = ''
     age = 0
-    _weight = 0  # 私有属性 ，在类外部无法直接进行访问
+    __weight = 0  # 私有属性 ，在类外部无法直接进行访问
     def __init__(self,n,a,w):
         self.name = n
         self.age = a
-        self._weight = w
+        self.__weight = w
 
     def speak(self):
-        return "%s说,我%d岁了，体重%s斤!" % (self.name,self.age,self._weight)
+        print(self.__weight)
+        return "%s说,我%d岁了，体重%s斤!" % (self.name,self.age,self.__weight)
 
 p = people('lily',4,20)
 print(p.speak())
