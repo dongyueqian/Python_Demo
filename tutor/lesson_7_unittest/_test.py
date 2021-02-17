@@ -12,7 +12,7 @@ class MyTest(unittest.TestCase):
 
     # 定义测试方法，以test开头
     def testSum(self):
-        self.assertEqual(calculation.sum(1,2),3,'test sum pass!')
+        self.assertEqual(calculation.sum(1, 2), 3, 'test sum pass!')
 
     def testSub(self):
         self.assertEqual(calculation.sub(4, 2), 2, 'test sub pass!')
