@@ -2,7 +2,7 @@
 os模块提供了很多跟操作系统相关联的函数
 '''
 import os
-print('返回当前工作目录',os.getcwd())  #返回当前工作目录 /Users/dongyueqian/Documents/Python_lesson/Python_Demo/模块和标准库
+print('返回当前工作目录',os.getcwd())  #返回当前工作目录 /Users/dongyueqian/Documents/Python_lesson/Python_Demo/lesson_8_模块和标准库
 # print(os.chdir('/Users/dongyueqian')) #修改当前的工作目录
 # print('返回修改后的当前工作目录：',os.getcwd())  # 返回当前工作目录 /Users/dongyueqian
 # os.system('mkdir today') # 指向该条代码后 会在目录/Users/dongyueqian 下新建一个today文件夹
