@@ -1,0 +1,48 @@
+mac下配置CGI python
+
+一、去目录 /etc/apachectl2/   找到 httpd.conf 配置服务器支持
+1、打开 httpd.conf
+  找到 #LoadModule cgi_module libexec/apache2/mod_cgi.so 去掉之前# 开放这个模块
+
+2、找到 #AddHandler cgi-script .cgi去掉前面的# ，并加上.py：AddHandler cgi-script .cgi.py
+
+3、找到  <Directory "/Library/WebServer/CGI-Executables"> 修改如下：
+    <Directory "/Library/WebServer/CGI-Executables">
+        AllowOverride None
+        Options ExecCGI
+        Require all granted
+        Require host ip
+    </Directory>
+    这个主要是 规定这个文件里面在服务器里 是否允许 访问 执行 修改等等
+
+二、完成上面的配置后
+1、保存并重启apache ： sudo  apachectl restart
+
+2、将你自己的可执行py文件test.py放在/Library/WebServer/CGI-Executables目录下，test.py内容如下：
+    #!/usr/bin/python
+    # -*- coding: UTF-8 -*-
+
+    print "Content-type:text/html"
+    print                               # 空行，告诉服务器结束头部
+    print '<html>'
+    print '<head>'
+    print '<meta charset="utf-8">'
+    print '<title>Hello World - 我的第一个 CGI 程序！</title>'
+    print '</head>'
+    print '<body>'
+    print '<h2>Hello World! 我是来自菜鸟教程的第一CGI程序</h2>'
+    print '</body>'
+    print '</html>'
+
+3、修改文件访问权限 ：sudo chmod +x test.py
+
+4、在浏览器输入：localhost/cgi-bin/test.py
+   为什么是访问 localhost/cgi-bin/test.py  而不是访问  localhost/CGI-Executables/test.py
+   因为 http.conf 中给/Library/WebServer/CGI-Executables 取了个别名
+   默认配置 ScriptAliasMatch ^/cgi-bin/((?!(?i:webobjects)).*$) " /Library/WebServer/CGI-Executables/$1"
+
+5、浏览器显示：Hello World! 我是来自菜鸟教程的第一CGI程序
+
+6、查看错误日志：
+    cd /private/var/log/apache2
+    tail -f error_log
